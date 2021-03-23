@@ -1,0 +1,72 @@
+# 1 Digitos del 0 al 9
+for s in range(0,10):
+    print(s)
+
+# 2 Números ente 100 y 199
+for m in range(100,200,1):
+    print(m)
+
+# 3 Números entre el 5 y el 20 saltando de 3 en 3
+for l in range(5,21,3):
+    print(l)
+
+# 4 Números correlativos entre el ingresado por el usuario y uno menos del doble del mismo.
+n = int(input("Número: "))
+for a in range(n, n*2):
+    print(a)
+
+# 5 y 6 ingrese una frase y luego imprimir un listado de las vocales que aparecen en esa frase (sin repetirlas).
+
+frase = input("frase: ")
+for r in "aeiou":
+    if r in frase:
+        print(f"Las vocales de la frase {frase} son: ")
+        print(r)
+
+# 7 programa que muestre la sumatoria de todos los números entre el 0 y el 100.
+c=int(input("Cantidad de números: "))
+
+total=0
+
+for variable in range(c):
+
+   numero=int(input("Número: "))
+
+   total+=numero #total= total+numero
+
+print("Total de la suma:", total)
+
+total = 0
+for a in range(101):
+    total = total + a
+print("Sumatoria:", total)
+
+# 8 años en el rango ingresado por el usuario, que sean bisiestos y múltiplos de 10.
+anoinicio=int(input("Año inicial:"))
+anofin=int(input("Año final:"))
+for ano in range(anoinicio, anofin+1):
+   if not ano%10==0:
+       continue
+   if not ano%4==0:
+       continue
+   if ano%100!=0 or ano%400==0:
+       print(ano)
+
+# 9 Factorial de un número
+numero=int(input("Número:"))
+f=1
+if numero!=0:
+    for i in range(1,numero+1):
+        f=f*i
+print("Factorial:", f)
+
+# 10 primeros 10 números de la sucesión de Fibonacci.
+n1=0
+n2=1
+print(n1)
+print(n2)
+for i in range(8):
+    n3=n1+n2
+    print(n3)
+    n1=n2
+    n2=n3
