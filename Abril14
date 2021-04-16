@@ -1,0 +1,67 @@
+#Ejercicio1
+def validar(email):
+    caracterBuscado="@"
+    emailValido=False
+    for c in email:
+        if c==caracterBuscado:
+            return True
+    return False
+
+ 
+direccion=input("Tu email: ")
+if validar(direccion):
+    print("Dirección válida")
+else:
+    print("Dirección inválida")
+
+#Ejercicio 1 mejorado
+direccion = input("Ingrese el correo de email: ")
+def validar(direccion):
+   if direccion.find('@' and ('.com' or '.co')) >= 0:
+       print("Direccion valida")
+   else:
+       print("Direccion invalida")
+validar(direccion)
+
+#Ejercicio2
+def sumaDigitos(numero):
+    suma=0
+    while numero!=0:
+        digito=numero%10
+        suma=suma+digito
+        numero=numero//10
+    return suma
+
+ 
+num=int(input("Número a procesar: "))
+while num!=0:
+    print("Suma:",sumaDigitos(num))
+    num=int(input("Número a procesar: "))
+#Ejercicio2 mejorado
+sum = 0
+def sumar(x,sum):
+   sum += x
+   print(sum, "def")
+   return sum
+while True:
+    num = int(input("numero = "))
+    if num == 0:
+        break
+    else:
+        sum += sumar(num, sum)
+        print(sum, "re")
+#Ejercicio4
+def primo(num):
+   for i in range(2,num):
+       if num%i==0:           
+           return False
+   return True
+
+ 
+numero=int(input("Número: "))
+if primo(numero):
+    print("Es primo")
+else:
+    print("No es primo")
+
+
