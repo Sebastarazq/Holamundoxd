@@ -1,0 +1,362 @@
+1.	Solicitar al usuario que ingrese su dirección de correo electrónico. Imprimir un mensaje indicando si la dirección es válida o no, valiéndose de una función para decidirlo. Una dirección se considerará válida si contiene el símbolo "@".
+Solución propuesta en clase	Solución propuesta en clase insegura 1.	Otra solución (?)
+def validar(email):
+    caracterBuscado="@"
+    emailValido=False
+    for c in email:
+        if c==caracterBuscado:
+            return True
+    return False
+
+ 
+direccion=input("Tu email: ")
+if validar(direccion):
+    print("Dirección válida")
+else:
+    print("Dirección inválida")
+	direccion=input("Ingrese el correo de email = ")
+def validar(direccion):
+    if direccion.find('@' and ('.com' or '.co')) >= 0: #Utiliza función .find() para validar el email.
+        print("Dirección válida")
+    else:
+        print("Dirección inválida")
+validar(direccion) #Devuelve que es válida o no dependiendo si cumplen las condiciones anteriores.
+	
+
+
+2.	Solicitar números al usuario hasta que ingrese el cero. Por cada uno, mostrar la suma de sus dígitos (utilizando una función que realice dicha suma).
+SOLUCION CLASE
+def sumaDigitos(numero):
+    suma=0
+    while numero!=0:
+        digito=numero%10
+        suma=suma+digito
+        numero=numero//10
+    return suma
+
+ 
+num=int(input("Número a procesar: "))
+while num!=0:
+    print("Suma:",sumaDigitos(num))
+    num=int(input("Número a procesar: "))
+
+SOLUCIÓN PROPUESTA
+ 
+OTRA SOLUCIÓN
+def sumaDigitos(numero):
+suma = 0
+while numero != 0:
+digito = numero % 10
+suma = suma + digito
+numero = numero // 10
+return suma
+
+
+num = int(input("Digite números menores que 10 sin espacios entre sí, ni símbolos y estos serán sumados, para terminar digite 0: "))
+while num != 0:
+print("Suma:", sumaDigitos(num))
+num = int(input("Digite números menores que 10 sin espacios entre sí, ni símbolos y estos serán sumados, para terminar digite 0: "))
+
+3.	Solicitar números al usuario hasta que ingrese el cero. Por cada uno, mostrar la suma de sus dígitos. Al finalizar, mostrar la sumatoria de todos los números ingresados y la suma de sus dígitos. Reutilizar la misma función realizada en el ejercicio 2.
+SOLUCIÓN CLASE
+def sumaDigitos(numero):
+    suma=0
+    while numero!=0:
+        digito=numero%10
+        suma=suma+digito
+        numero=numero//10
+    return suma
+
+ 
+sumatoria=0
+num=int(input("Número a procesar: "))
+while num!=0:
+    print("Suma:",sumaDigitos(num))
+    sumatoria=sumatoria+num
+    num=int(input("Número a procesar: "))
+print("Sumatoria:", sumatoria)
+print("Dígitos:", sumaDigitos(sumatoria))
+
+SOLUCION PROPUESTA
+ 
+
+4.	Solicitar al usuario que ingrese un número entero e informarle si es primo o no, utiliza en el código una función booleana que lo decida.
+SOLUCIÓN PLANTEADA EN CLASE
+
+def primo(num):
+   for i in range(2,num):
+       if num%i==0:           
+           return False
+   return True
+
+ 
+numero=int(input("Número: "))
+if primo(numero):
+    print("Es primo")
+else:
+    print("No es primo")
+
+
+SOLUCIÓN PROPUESTA
+ 
+
+5.	Solicitar al usuario un número entero y luego un dígito. Informar la cantidad de ocurrencias del dígito en el número, utiliza para ello una función que calcule la frecuencia del dígito en el número ingresado.
+SOLUCIÓN DE CLASE
+def frecuencia(numero,digito):
+   cantidad=0
+   while numero!=0:
+       ultDigito=numero%10
+       if ultDigito==digito:
+           cantidad+=1
+       numero=numero//10
+   return cantidad
+
+SOLUCIÓN PROPUESTA
+def frecuencia(numero, digito):
+    cantidad = 0
+    while numero != 0:
+        ultDigito = numero % 10
+        if ultDigito == digito:
+            cantidad += 1
+        numero = numero // 10
+    return cantidad
+
+print("Digite a continuación un número y después digite que número desea ver cuantas veces se repite en este: ")
+num = int(input("Número: "))
+un_digito = int(input("Dígito: "))
+print("Frecuencia del dígito en el número:", frecuencia(num, un_digito))
+
+OTRA SOLUCIÓN PROPUESTA
+ 
+6.	Escribir un programa que pida números al usuario, mostrar el factorial de cada uno y, al finalizar, la cantidad total de números leídos en total. Utilizar una o más funciones, según sea necesario.
+SOLUCIÓN CLASE
+def factorial(numero):
+   f=1
+   if numero!=0:
+       for i in range(1,numero+1):
+           f=f*i
+   return f
+
+ 
+cantidad=0
+num=int(input("Número (-1 para cortar): "))
+while num!=-1:
+    print("Factorial:", factorial(num))
+    cantidad+=1
+    num=int(input("Número (-1 para cortar): "))
+print("Se leyeron",cantidad,"números")
+
+
+OTRA SOLUCIÓN PROPUESTA	
+def factorial(numero):
+   f=1
+   if numero!=0:
+       for i in range(1,numero+1):
+           f=f*i
+   return f
+cantidad=0
+num=int(input("Ingrese un número e ingrese el -1 para dejar de ejecutar: "))
+while num!=-1:
+    print("El número factorial de" + " " + str(num) + " es = " + str(factorial(num)))
+    cantidad+=1
+    num=int(input("Ingrese un número e ingrese el -1 para dejar de ejecutar: "))
+print("Se leyeron",cantidad,"números")
+
+7.	Escribir un programa que pida números positivos al usuario. Mostrar el número cuya sumatoria de dígitos fue mayor y la cantidad de números cuya sumatoria de dígitos fue menor que 10. Utilizar una o más funciones, según sea necesario.
+SOLUCIÓN CLASE
+def sumaDigitos(numero):
+  suma=0
+  while numero!=0:
+      digito=numero%10
+      suma=suma+digito
+      numero=numero//10
+  return suma
+
+ 
+cantidad=0
+mayor=-1
+numero=int(input("Número positivo: "))
+while numero>=0:
+    suma=sumaDigitos(numero)
+    if suma > mayor:
+          mayor=suma
+          n_mayorsuma=numero
+    if suma < 10:
+        cantidad+=1
+    numero=int(input("Número positivo: "))
+print("Sumatoria de dígitos de",n_mayorsuma,":",mayor)
+print("Cantidad con sumatoria menor a 10:",cantidad)
+
+SOLUCIÓN PROPUESTA
+def sumaDigitos(numero):
+  suma=0
+  while numero!=0:
+      digito=numero%10
+      suma=suma+digito
+      numero=numero//10
+  return suma
+cantidad=0
+mayor=-1
+agregar = "si"
+while agregar == "si":
+    numero=int(input("Ingrese un número positivo: "))
+    if numero>=0:
+        suma=sumaDigitos(numero)
+        if suma > mayor:
+              mayor=suma
+              n_mayorsuma=numero
+        if suma < 10:
+            cantidad+=1
+        print("Sumatoria de dígitos de",n_mayorsuma,"es =",mayor)
+        print("Cantidad con sumatoria menor a 10 es =",cantidad)
+        agregar = input("¿Desea ingresar otro número? si o no = ")
+        if agregar == "no":
+            print("Se ha terminado de ejecutar correctamente el programa.")
+            break
+    else:
+        print("El número ingresado no puede ser negativo, vuelva a ingresar números.")
+        agregar == "si"
+
+8.	Solicitar al usuario el ingreso de números primos. La lectura finalizará cuando ingrese un número que no sea primo. Por cada número, mostrar la suma de sus dígitos. También solicitar al usuario un dígito e informar la cantidad de veces que aparece en el número (frecuencia). Al finalizar el programa, mostrar el factorial del mayor número ingresado.
+SOLUCIÓN CLASE:
+def primo(num):
+   for i in range(2,num):
+       if num%i==0:           
+           return False
+   return True
+
+ 
+def frecuencia(numero,digito):
+   cantidad=0
+   while numero!=0:
+       ultDigito=numero%10
+       if ultDigito==digito:
+           cantidad+=1
+       numero=numero//10
+   return cantidad
+
+ 
+def factorial(numero):
+   f=1
+   if numero!=0:
+       for i in range(1,numero+1):
+           f=f*i
+   return f
+
+ 
+def sumaDigitos(numero):
+  suma=0
+  while numero!=0:
+      digito=numero%10
+      suma=suma+digito
+      numero=numero//10
+  return suma
+
+ 
+mayor=0
+numero=int(input("Número primo: "))
+while primo(numero):
+    print("Suma de los dígitos:",sumaDigitos(numero))
+    digito=int(input("Dígito: "))
+    print("El",digito,"aparece",frecuencia(numero,digito),"veces")
+    if numero > mayor:
+          mayor=numero
+    numero=int(input("Número primo: "))
+print("Factorial de",mayor,":",factorial(mayor))
+
+SOLUCIÓN PROPUESTA
+def primo(num):
+   for i in range(2,num):
+       if num%i==0:           
+           return False
+   return True
+
+def frecuencia(numero,digito):
+   cantidad=0
+   while numero!=0:
+       ultDigito=numero%10
+       if ultDigito==digito:
+           cantidad+=1
+       numero=numero//10
+   return cantidad
+
+def factorial(numero):
+   f=1
+   if numero!=0:
+       for i in range(1,numero+1):
+           f=f*i
+   return f
+
+def sumaDigitos(numero):
+  suma=0
+  while numero!=0:
+      digito=numero%10
+      suma=suma+digito
+      numero=numero//10
+  return suma
+
+mayor=0
+agregar = "si"
+while agregar == "si":
+    numero=int(input("Ingrese un número primo: "))
+    while primo(numero):
+        digito=int(input("Dígito: "))
+        print("Suma de los dígitos:",sumaDigitos(numero))
+        print("El",digito,"aparece",frecuencia(numero,digito),"veces")
+        if numero > mayor:
+            mayor=numero
+        break
+    else:
+        print("Factorial de",mayor,":",factorial(mayor))
+        print("El últmo número ingresado no es primo.")
+        print("El programa ha finalizado con éxito")
+        break
+    agregar = input("¿Quiere ingresar otro número? si o no = ")
+    if agregar == "no":
+        print("Factorial de",mayor,":",factorial(mayor))
+        print("El programa ha finalizado con éxito.")
+        break
+
+
+9.	Escribir una función que, dado un número de cédula de ciudadanía, retorne True si el número es válido y False si no lo es. Consulta cuál es la longitud válida para cédula en Colombia. 
+10.	cond="si"
+11.	def frecuencia(numero):
+12.	   cantidad=0
+13.	   while numero!=0:
+14.	       ultDigito=numero%10
+15.	       cantidad+=1
+16.	       numero=numero//10
+17.	   return cantidad
+18.	while cond=="si":
+19.	    hi=input("""que desea ingresar:
+20.	    1.Cedula de ciudadania
+21.	    2.Tarjeta de identidad
+22.	      = """)
+23.	    num=int(input("Ingrese el número: "))
+24.	    if frecuencia(num)< 4 and frecuencia(num)< 12:
+25.	        print("el numero  es invalido")
+26.	    else:
+27.	        print("El número es valido.")
+28.	        cond="no"
+29.	    cond=input("¿Quieres volver a ingresar? ¿si o no?= ")
+30.	    if cond =="no":
+31.	        print("Vuelve pronto amigo....(saludos desde Bucaramanga y Tibú para el mundo).")      
+32.	#En colaboración de Breyner - Tibú
+
+
+10.Escribir una función que, dada una cadena, retorne la longitud de la última palabra. Se considera que las palabras están separadas por uno o más espacios. También podría haber espacios al principio o al final del string pasado por parámetro.  Consulta sobre la función len() en Python.
+
+def ultimaPalabra(cadena):
+   if len(cadena)==0:
+       return 0
+   cantidad=0
+   for i in range(len(cadena)):
+       if cadena[i]!=' ':
+           cantidad+=1
+       else:
+           if i<len(cadena)-1 and cadena[i+1]!=' ':
+               cantidad=0
+   return cantidad
+cadena = input("Ingrese la cadena o frase = ")
+if ultimaPalabra(cadena):
+    print(ultimaPalabra(cadena))
