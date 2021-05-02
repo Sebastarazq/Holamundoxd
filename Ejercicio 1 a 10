@@ -1,0 +1,98 @@
+#1
+# Nombre + calificativo
+
+Nombre = input("Ingrese su nombre:")
+Calificativo = input("Ingrese su calificativo:")
+print(Nombre+Calificativo)
+
+#2
+#Sacar el cuadrado de un valor ingresado
+x = int(input("Ingrese valor de X:  "))
+cuadrado = pow(x,2)
+print("El cuadrado de X es: ", cuadrado)
+
+#3
+#imprimir la suma de dos números dados
+x = int(input("Ingrese valor de lado 1:  "))
+y = int(input("Ingrese valor de lado 2:  "))
+suma = x+y
+print("La suma de los dos lados es de: ", suma)
+
+#4
+#imprimir la suma, resta, multiplicación, división y residuo de dos números dados
+x = int(input("Ingrese valor de lado 1:  "))
+y = int(input("Ingrese valor de lado 2:  "))
+suma = x+y
+resta = x-y
+multiplicacion = x*y
+division = x/y
+residuo = x%y
+
+print("La resultado es: ", "suma:", suma, "resta:", resta, "multiplicación:", multiplicacion, "división:", division, "residuo:", residuo)
+
+#5
+
+#Programa que imprima la parte entera y decimal por aparte de un número ingresado por el usuario
+#Definir variables
+decimal = float(input("Ingrese un número decimal = "))
+print()
+#Proceso separar parte entera
+entero = int(decimal)
+print("La parte entera es = " + str(entero) + "\n")
+#Proceso para separar la parte decimal de la entera
+decimal2 = float(entero - decimal)
+print("La parte decimal es = " + str(decimal2) + "\n")
+
+#6
+
+'''
+determine el IVA (19%) de una venta realizada, indicando el valor
+original, el valor del IVA y el valor de la venta con IVA incluido
+'''
+Valor = int(input("Ingrese el valor del producto: $ "))
+IVA = 0.19
+ValorFinal = (Valor * IVA) + Valor
+
+print("El precio del producto es: ", ValorFinal)
+
+#7
+
+#imprima el área y el perímetro de un círculo
+pi = 3.1416
+radio = int(input("Ingrese el radio del círculo: "))
+
+área = (pi)*(radio**2)
+perímetro = (2*pi) * radio
+
+print("El área del círculo es: ", área)
+print("El perímetro del círculo es: ", perímetro)
+
+#8
+
+#calcule el área de un hexágono
+lh = float(input("Ingrese el valor del lado: "))
+p = lh * 6
+a = float(input("Ingrese el valor del apotema: "))
+ah = p * a /2
+
+print("El área del hexágono es: ", ah)
+
+#9
+
+#tres números calcule el promedio de dichos números
+l1 = float(input("Ingrese el valor de lado1: "))
+l2 = float(input("Ingrese el valor de lado2: "))
+l3 = float(input("Ingrese el valor de lado3: "))
+
+print ("El promedio de los tres lados es: ", (l1+l2+l3) / 3)
+
+#10
+#Programa que intercambie los valores ingresados
+#Definir variables
+a = float(input("Ingrese el primer número de a = "))
+b = float(input("Ingrese el segundo número de b = "))
+#Procesos
+a, b = b, a
+#Imprimir
+print("El nuevo valor de a es = ",a)
+print("El nuevo valor de b es = ",b)
