@@ -1,0 +1,204 @@
+#11
+
+#Programa que calcule el tiempo de caída de un objeto
+#Definir variables y constantes
+gravedad = 10
+pregunta = str(input("¿Quieres hallar el tiempo de caída del objeto con velocidad(v) o con altura(h)?, v o h = "))
+#Condiciones para aplicar la dos fírmulas
+if pregunta == "h":
+    altura = float(input("Ingrese el valor de la altura = "))
+    tiempoH = (((2 * altura) / gravedad)**(0.5))
+    print("El tiempo de caída del objeto es = " + str(tiempoH) + " [segundos]" + "\n")
+else:
+    if pregunta == "v":
+        vFinal = float(input("Ingrese el valor de la velocidad final = "))
+        vInicial = float(input("Ingrese el valor de la velocidad Inicial = "))
+        tiempo = (vFinal - vInicial) / gravedad
+        print("El tiempo de caída del objeto es = " + str(tiempo) + " [segundos]" + "\n" )
+
+#12
+
+'''
+determine la distancia recorrida por un objeto luego de una cantidad de tiempo,
+si se sabe que va en línea recta y además se conoce su aceleración y su velocidad.
+'''
+#Definir variables
+pregunta = str(input("¿Quieres hallar la distancia recorrida de un objeto? si o no = "))
+if pregunta == "si":
+    tiempo = float(input("Ingrese el valor del tiempo en hora = "))
+    aceleracion = float(input("Ingrese el valor de la aceleración = "))
+    velocidad = float(input("Ingrese el valor de la velocidad = "))
+    #Proceso
+    distancia = (velocidad * tiempo) + 1/2 *(aceleracion*pow(tiempo, 2))
+    #IMPRIMIR
+    print()
+    print("La distancia recorrida por el objeto es = " + str(distancia) + " [m]" )
+    print("¡El programa se ha terminado de ejecutar con éxito!")
+else:
+    print("Finish!!")
+    
+#13
+'''
+determine la velocidad final de un objeto luego de un tiempo,
+si se sabe que va en línea recta y además se conoce su aceleración
+'''
+pregunta = str(input("¿Quieres hallar la velocidad final de un objeto? si o no = "))
+if pregunta == "si":
+    velocidadInicial = float(input("Ingrese el valor de la velocidad inicial = "))
+    aceleracion = float(input("Ingrese el valor de la aceleración = "))
+    tiempo = float(input("Ingrese el valor del tiempo en segundos = "))
+    # PROCESOS
+    velocidadFinal = velocidadInicial + (aceleracion * tiempo)
+    print("La velocidad final del objeto es = ", velocidadFinal)
+    print("¡El programa se ha terminado de ejecutar con éxito!")
+else:
+    print("Finish!!")
+#14
+'''
+Determine la energía (en Julios) de un objeto si se conoce la masa de un objeto (en kg) y la velocidad de la luz (en m/s).
+'''
+pregunta = str(input("¿Quieres hallar la energía de un objeto? si o no = "))
+if pregunta == "si":
+    # Variables y constantes
+    masa = float(input("Ingres el valor de la masa del objeto en kg = "))
+    velocidadLuz = 299792.458
+    #Procesos
+    energia = masa * (pow(velocidadLuz, 2))
+    print("La energía del objeto es = " + str(energia) + " Julios [J]")
+    print("¡El programa se ha terminado de ejecutar con éxito!")
+else:
+    print("Finish!!!")
+    
+#15
+'''
+Programa que dadas coordenadas x1,y1 y x2,y2
+en el plano cartesiano calcule la distancia entre ellos (considere todos los valores positivos)
+'''
+#Definir variables
+mas = "true"
+x1 = 0
+x2 = 0
+y1 = 0
+y2 = 0
+while mas == "true":
+    if mas == "true":
+        x1 = float(input("Ingrese el valor de x1 = "))
+        y1 = float(input("Ingrese el valor de y1 = "))
+        x2 = float(input("Ingrese el valor de x2 = "))
+        y2 = float(input("Ingrese el valor de y2 = "))
+        #PROCESO
+        d = (pow(x2 - x1, 2) + pow(y2 - y1, 2))**(0.5)
+        print("La distancia entre los puntos es = " + str(d) + "\n")
+        mas = str(input("¿Quieres seguir calculando la distancia entre dos puntos? true o false = "))
+
+print("¡El programa ha finalizado con éxito!")
+#16
+#Programa que dada una cantidad de segundos indique cuántas horas representan
+
+#Definir varibles y constantes
+segundos = float(input("Ingrese la cantidad de segundos que desea convertir = "))
+segundosHora = 3600
+#Procesos
+hora = segundos / segundosHora
+print("Las horas correspondientes al valor ingresado son = " + str(hora) + " horas")
+
+#17
+# Programa que dada una cantidad de segundos indique cuántos minutos representan
+#Variables y constantes
+segundos = float(input("Ingrese la cantidad de segundos que desea convertir = "))
+segundosMinuto = 60.0
+#Procesos
+minutos = segundos / segundosMinuto
+print("Los minutos correspondientes al valor ingresado son = " + str(minutos) + " minutos")
+
+#18
+
+'''
+Programa que dada una cantidad de segundos indique cuántos horas minutos y segundos representan.
+Por ejemplo si el valor es 86399, imprimirá el siguiente resultado -->  23:59:59
+'''
+#Definir variables y constantes
+valor = int(input("Ingrese el valor que desea convertir = "))
+segundosHora = 3600
+segundosMinutos = 60
+#Proceso
+hora = int(valor / segundosHora)
+minutos = int((valor - (hora*segundosHora)) / 60)
+segundos = valor - ((hora * 3600) + (minutos*60))
+
+print("La hora exacta es = " + str(hora) + ":" + str(minutos) + ":" + str(segundos))
+
+#19
+'''
+Programa que dada una cantidad de dinero,
+determine la menor cantidad de billetes de cada denominación que se puede entregar.
+'''
+# Definir variables, acumuladores
+valor = 0
+cien = 0
+cincuenta = 0
+veinte = 0
+diez = 0
+cinco = 0
+mil = 0
+#Proceso
+valor = int(input("Ingrese la cantidad de dinero = "))
+if valor >= 1:
+    # Billete 100.000
+    cien = int(valor / 100000)
+    reserva = valor % 100000
+    #Billete 50.000
+    cincuenta = int(reserva / 50000)
+    reserva = reserva % 50000
+    #Billete 20.000
+    veinte = int(reserva / 20000)
+    reserva = reserva % 20000
+    #Billete 10.000
+    diez = int(reserva / 10000)
+    reserva = reserva % 10000
+    #Billete 5.000
+    cinco = int(reserva / 5000)
+    reserva = reserva % 5000
+    #Billete 1.000
+    mil = int(reserva / 1000)
+    reserva = reserva % 1000
+    #IMPRIMIR
+    print("La cantidad mínima de cada billete son:")
+    print(str(cien) + " de 100.000" + "\n"+ str(cincuenta) + " de 50.000" + "\n" + str(veinte) + " de 20.000" + "\n" + str(diez) + " de 10.000" + "\n" + str(cinco) + " de 5.000" + "\n" + str(mil)+ " de 1.000" )
+else:
+    print("La cantidad de billetes ingresados es incorrecta, no se permiten valores negativos.")
+    
+#20
+#Programa que dado un numero de 4 cifras, reordene sus dígitos de manera inversa. Por ejemplo 3245 ---> 5423
+#Definir variables
+mas = "true"
+#Proceso
+while mas == "true":
+    numero = int(input("Ingrese un número de 4 cifras = "))
+    if (numero >= 1000) and (numero <= 9999):
+        #El módulo se usa para poder tener la última cifra
+        n4 = numero % 10
+        n3 = int((numero % 100) / 10)
+        n2 = int((numero % 1000 / 100))
+        n1 = int((numero - (numero % 1000)) / 1000)
+        print("El número inverso es = " + str(n4) + str(n3) + str(n2) + str(n1) + "\n")
+        mas = str(input("¿Quieres ingresar más números? true o false = "))
+    else:
+        print("Número ingresado es menor o mayor a un número de 4 cifras" + "\n")
+print("¡El programa ha finalizado con éxito!" + "\n")
+#21
+#Programa que lea un número y determine si es par o impar.
+#Definir variables y proceso con ciclo
+agregar = "true"
+while agregar == "true":
+    numero = int(input("Ingrese un número = "))
+    if numero > 0:
+        if numero % 2 == 0:
+            print("El número" + " " + str(numero) + " " + "es par." + "\n")
+        else:
+            if numero % 2 != 0:
+                print("El número" + " " + str(numero) + " " + "es impar." + "\n")
+        agregar = str(input("¿Quieres ingresar otro número? true o false = "))
+    else:
+        print("El número ingresado es negativo, no se permiten número negativos." + "\n")
+print("¡El programa ha finalizado con éxito!" + "\n")
