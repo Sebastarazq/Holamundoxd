@@ -1,0 +1,171 @@
+#22
+#Programa que lea un número y determine si es positivo o negativo
+#Definir variables
+number = float(input("Ingrese un número = "))
+print()
+#Proceso
+if number > 0:
+    print("El número" + " " + str(number) + " " + "es positivo." + "\n")
+else:
+    if number <0:
+        print("El número" + " " + str(number) + " " + "Es negativo." + "\n" )
+print("¡El programa ha finalizado con éxito!" + "\n")
+
+#23
+#Programa que lea un número e indique si este es par-positivo, par-negativo, impar-positivo o impar-negativo
+#Definir variables
+number = int(input("Ingrese un número = "))
+if ( number >= 0) and (number % 2 == 0):
+    print("El número" + " " + str(number) + " " + "es positivo y par." + "\n")
+else:
+    if (number < 0) and (number % 2 == 0):
+        print("El número" + " " + str(number) + " " + "es negativo y par." + "\n")
+    else:
+        if (number >= 0) and (number % 2 != 0):
+            print("El número" + " " + str(number) + " " + "es positivo e impar." + "\n")
+        else:
+            if (number < 0) and (number % 2 != 0):
+                print("El número" + " " + str(number) + " " + "es negativo e impar." + "\n")
+print("¡El programa ha finalizado con éxito!" + "\n")
+#24
+#Programa que determine el IVA (19%) de una venta, si esta es mayor a 150.000 aplicar un descuento del 5%.
+#Definir variables, acumuladores y lógicos
+agregar = "si"
+suma = 0
+total = 0
+totalIva = 0
+totalIva2 = 0
+#Proceso
+while agregar == "si":
+    valorProducto = int(input("Ingrese el valor del producto = "))
+    if valorProducto > 0:
+        if valorProducto >0:
+            suma = suma + valorProducto
+            total = suma
+            totalIva = (suma * 0.19) + suma
+            agregar = str(input("¿Quieres agregar más productos? si o no = "))
+        if agregar == "no":
+            print("El valor de su compra es = " + str(totalIva) + "\n")
+        elif totalIva >=  150000:
+            totalIva2 = totalIva - (totalIva * 0.05)
+            print("El valor de su compra sin descuento es" + " " + str(totalIva) + " y " + "el valor totaal de la compra con el descuento del 5% es = " + str(totalIva2) + "\n")
+    else:
+        print("Valor incorrecto, no se permiten número negativos.")
+
+#25
+#Programa que lea un número y si este es mayor o igual a 10 devuelva el triple de este, de lo contrario la cuarta parte de este
+#Definir variables
+number = int(input("Ingrese un número = "))
+#Proceso
+if number >= 10:
+    total = number * 3
+    print("El resultado de" + " " + str(number) + " " + "al triple es = " + str(total))
+else:
+    total = number / 4
+    print("El resultado de la cuarta parte de" + " " + str(number) + " " + "es = " + str(total))
+    
+#26
+'''
+Programa que lea las cinco notas obtenidas por un estudiante y calcule su nota final,
+sabiendo que las cada nota tiene el siguiente valor: n1 (15%), n2 (20%), n3 (15%), n4 (30%), n5 (20%).
+Si la nota obtenida es menor a 2,0 deberá indicarle al estudiante que no puede habilitar,
+si la nota obtenida es menor a 3 deberá indicar que reprobó,
+si la nota es mayor o igual a 3 deberá indicar que aprobó y si es mayor a 4,5 extenderá un mensaje de felicitación al estudiante.
+'''
+#Definir variables, constantes, acumuladores y lógicos
+contador = 1
+promedio = 0
+p1 = 0.15
+p2 = 0.2
+p3 = 0.15
+p4 = 0.3
+p5 = 0.2
+while contador <= 5 :
+    nota = float(input("Ingrese la nota" + " " + str(contador) + " = "))
+    if (nota >= 0) and ( nota <= 5):
+        if contador == 1:
+            promedio = promedio +(nota * p1)
+        if contador == 2:
+            promedio = promedio + (nota * p2)
+        if contador == 3:
+            promedio = promedio + (nota * p3)
+        if contador == 4:
+            promedio = promedio + (nota * p4)
+        if contador == 5:
+            promedio = promedio + (nota * p5)
+        contador += 1
+if promedio < 2.0:
+    print("Su promedio es de = " + str(promedio) + ", por esa razón NO puede habilitar.")
+else:
+    if promedio < 3:
+        print("Su promedio es de = " + str(promedio) + ", por esa razón Reprobó :c.")
+    else:
+        if (promedio >= 3) and (promedio <= 4.5) :
+            print("Su promedio es de = " + str(promedio) + ", por esa razón ¡Aprobó!.")
+        else:
+            if promedio > 4.5:
+                print("Su promedio es de = " + str(promedio) + ", por esa razón... ¡Aprobó! Felicitaciones... Never Give Up! :D")
+  
+ #27
+ #Programa que lea dos números y determine el mayor de ellos.
+#Definir variables
+number1 = float(input("Ingrese el primer número = "))
+number2 = float(input("Ingrese el segundo número ="))
+#Proceso
+if number1 > number2:
+    print(str(number1) + " " + "es mayor que" + " " + str(number2))
+else:
+    print(str(number2) + " " + "es mayor que" + " " + str(number1))
+
+
+#28
+# Programa que lea un número y lo convierta a decimal
+# Definir variables
+number = int(input("Ingrese el número que desea convertir a decimal = "))
+# Proceso
+decimal = float(number)
+print("El número con cifras decimales es = ", decimal)
+
+#29
+#Programa que lea tres números y determine el mayor y el menor de ellos.
+#Definir variables
+number1 = float(input("Ingrese el primer número = "))
+number2 = float(input("Ingrese el segundo número = "))
+number3 = float(input("Ingrese el tercer número = "))
+#Proceso
+if (number1 > number2) and (number1 > number3) and (number2 > number3):
+    print("El número mayor es = " + str(number1) + " y el número menor es = " + str(number3) + "\n")
+else:
+    if (number1 > number2) and (number1 > number3) and (number3 > number2):
+        print("El número mayor es = " + str(number1) + " y el número menor es = " + str(number2) + "\n")
+    else:
+        if (number2 > number1) and (number2 > number3) and (number1 > number3):
+            print("El número mayor es = " + str(number2) + " y el número menor es = " + str(number3) + "\n")
+        else:
+            if (number2 > number1) and (number2 > number3) and (number3 > number1):
+                print("El número mayor es = " + str(number2) + " y el número menor es = " + str(number1) + "\n")
+            else:
+                if (number3 > number1) and (number3 > number2) and (number2 > number1):
+                    print("El número mayor es = " + str(number3) + " y el número menor es = " + str(number1) + "\n")
+                else:
+                    if (number3 > number1) and (number3 > number2) and (number1 > number2):
+                        print("El número mayor es = " + str(number3) + " y el número menor es = " + str(number2) + "\n")
+print("El programa finalizó con exitosamente" + "\n")
+
+#30
+#Programa que lea tres números y determine si la suma del primero y el segundo es mayor o menor que el tercero
+#Definir variables
+number1 = float(input("Ingrese el primer número = "))
+number2 = float(input("Ingrese el segundo número = "))
+number3 = float(input("Ingrese el tercer valor = "))
+#Proceso
+total = number1 + number2
+if total > number3:
+    print("La suma de los dos primero números es mayor que el tercer número ingresado, la suma total es = " , total)
+else:
+    if total < number3:
+        print("La suma de los dos primero números es menor que el tercer número ingresado, la suma total es = " , total)
+    else:
+        if total == number3:
+            print("La suma de los dos primero números es igual al tercer número ingresado, la suma total es = " , total)
+            
