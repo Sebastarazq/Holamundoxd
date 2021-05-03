@@ -1,0 +1,153 @@
+#31
+'''
+Programa que determine el valor de un pasaje en avión, conociendo la distancia a recorrer, el número de días de estancia,
+y sabiendo que, si la distancia a recorrer es superior a 1000 Km y el número de días de estancia es superior a 7,
+la línea aérea le hace un descuento del 15%. (el precio por km. es de $5.000 aunque el mínimo a cobrar siempre es $100.000).
+'''
+#Definir variables
+distancia = int(input("Ingrese la distancia que se recorrió = "))
+dias = int(input("Ingrese el número de días de estancia = "))
+km = 5000 #Mínimo a cobrar 100.000
+#Procesos
+total = (distancia * 5000)
+if (distancia < 1000) and (dias < 7):
+    print("El valor del pasaje es = $" + str(total) + " " + "y su estancia fue de" + " " + str(dias) +  " " + "días")
+else:
+    if (distancia > 1000) and (dias > 7):
+        total = total - (total * 0.15)
+        print("Le valor del pasa es = $" + str(total) + " (con descuento del 15%) " +  "y su estancia fue de" + " " + str(dias) + " " + "dias.")
+ 
+ #32
+# Programa que determine si un año dado es o no bisiesto.
+# Definir variables
+anio = int(input("Ingrese el año  = "))
+# Proceso
+if anio % 4 != 0:
+    print("El año" + " " + str(anio) + " " + "no es un año bisiesto")
+elif (anio % 4 == 0) and (anio % 100 != 0):  # No es divisible entre 100 y 400
+    print("El año" + " " + str(anio) + " " + "es bisiesto")
+elif (anio % 4 == 0) and (anio % 100 == 0) and (anio % 400 != 0):  # Divisible entre 4 y 100 pero no entre 400
+    print("El año" + " " + str(anio) + " " + "no es un año bisiesto")
+elif (anio % 4 == 0) and (anio % 100 == 0) and (anio % 400 == 0):
+    print("El año" + " " + str(anio) + " " + "es bisiesto")
+    
+ #33
+ #Programa que que permita resolver una ecuación cuadrática de tipo ax2 + bx + c
+#Definir variables
+a = float(input("Ingrese el número de a = "))
+b = float(input("Ingrese el número de b = "))
+c = float(input("Ingrese el número de c = "))
+#Definir proceso
+discriminante = (b ** 2 ) - 4 * a * c
+if discriminante < 0:
+    print("La ecuación no tiene soluciones reales")
+elif discriminante == 0:
+    x = -b / (2*a)
+    print("La solución es = ", x)
+else:
+    x1 = (-b - (discriminante ** 0.5)) / (2 * a)
+    x2 = (-b + (discriminante ** 0.5)) / (2 * a)
+    print("Las dos soluciones reales son = " + str(x1) + " y " + str(x2))
+#34
+'''
+Programa que dado un usuario y una contraseña predefinida (por ejemplo usuario=”carlos" y contraseña=”1234”,
+le permita a un usuario digital su usuario y contraseña y
+enviar un mensaje de inicio de sesión si lo digitado corresponde al usuario y contraseña predefinida.
+'''
+#Definir acumuladores y variables
+nombre = 0
+contra = 0
+pregunta = input("¿Quieres registrarte? si o no = ")
+if pregunta == "si": #Procesos - condicionales
+    name = input("Ingrese un nombre de usuario = ")
+    password = input("Ingrese una contraseña = ")
+    print("Se ha registrado correctamente")
+else:
+    if pregunta == "no":
+        print("Finish.")
+entrar = "si"
+while entrar == "si": #Procesos - Ciclo para pedir de nuevo los datos si son incorrectos
+    entrar = input("¿Desea Iniciar Sesión? si o no = ")
+    if entrar == "si":
+        nombre = input(" Usuario = ")
+        contra = input(" Contraseña = ")
+        if (nombre == name) and (contra == password):
+            print("Se ha iniciado exitosamente, en unos segundos será redirigido a la página principal.")
+            break
+        else:
+            if nombre != name:
+                print("Nombre Incorrecto.")
+            else:
+                if contra != password:
+                    print("Contraseña incorrrecta.")
+                else:
+                    if (nombre != name) and (contra != password):
+                        print("Ambos datos ingresados son incorrectos.")
+    else:
+        print("Finish.")
+        
+ #35
+ #Programa que dado un número entre 0 y 10, imprima el nombre del número. Ejemplo: 1 ---> UNO
+#Definir variables y listas
+number = int(input("Ingrese un número entre 0 y 10 = "))
+nombreNumber = ['Cero', 'Uno', 'Dos', 'Tres', 'Cuatro', 'Cinco', 'Seis', 'Siete', 'Ocho','Nueve', 'Diez']
+print("El nombre del número" + " " + str(number) + " " + "es = " + str(nombreNumber[number]))
+
+
+
+#36
+#Programa que dado un número menor a un 100.000 determine la cantidad de dígitos que tiene. Por ejemplo 1093 tiene 4 dígitos.
+#Defoinir variables
+number = int(input("Ingrese un número menor a 100000 = ")) # Definir Entrada
+contador = 0
+while number != 0:
+    number = number // 10
+    contador += 1
+print("La cantidad de dígitos del número ingresado son = " + str(contador) + " " + "dígitos")
+
+#37
+'''
+Programa que dados 3 números, determine si los números se están incrementando,
+disminuyendo o ninguno de lo anterior de acuerdo con el orden de digitación
+'''
+line = input( "Ingrese los tres número = ").split()
+n1 = int(line[0])
+n2 = int(line[1])
+n3 = int(line[2])
+if (n1 > n2) and (n2 > n3):
+    print("Está Disminuyendo.")
+else:
+    if (n1 < n2) and (n2 < n3):
+        print("Está incrementando.")
+    else:
+        print("No se incrementa ni se disminuye.")
+        
+        
+#38
+#Programa que dados dos números, verifique si ambos están entre 0 y 5 o retorne false sino es cierto
+mas = "true"
+while mas == "true": #Se establece un bucle
+    numero1 = int(input("Ingrese el primer número = "))
+    numero2 = int(input("Ingrese el segundo número = "))
+    if (numero1 >= 0 and numero1 <= 5) and (numero2 >= 0 and numero2 <= 5):
+        print("Los números" + " " + str(numero1) + " y " + str(numero2) + " " + "sí están en el rango.")
+    else:
+        print("Los números" + " " +  str(numero1) + " y " + str(numero2) + " = False")
+#39
+#Programa que lea un número del día de la semana (entre 1 y 7) e indique el nombre del día.
+nombreDias = ['None','Lunes','Martes','Miércoles','Jueves','Viernes','Festivo','Festivo'] #lista para determinar el día
+number = int(input("Ingrese el el número de la semana para conocer el nombre del día = ")) #Definir entrada
+print("El nombre del día número" + " " +str(number) + " es = " + str(nombreDias[number]))
+
+#40
+#imprimir la suma, resta, multiplicación, división y residuo de dos números dados
+x = int(input("Ingrese valor de lado 1:  "))
+y = int(input("Ingrese valor de lado 2:  "))
+suma = x+y
+resta = x-y
+multiplicacion = x*y
+division = x/y
+residuo = x%y
+
+print("La resultado es: ", "suma:", suma, "resta:", resta, "multiplicación:", multiplicacion, "división:", division, "residuo:", residuo)
+ 
